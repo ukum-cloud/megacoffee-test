@@ -1,0 +1,172 @@
+/* ctrl+f 검색어찾기 기능 */
+/* 메가커피 메인색상, 글자색상 */
+:root {
+    --mainColor: #fdd000;
+    --mainTextColor: #212121;
+}
+
+.inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    /* background: rgba(255, 0, 0, 0.3); */
+}
+
+/* header */
+header {
+    background: white;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
+}
+
+header .inner {
+    display: flex;
+    /* header부분 좌우로 간격맞춰서 들어가기 */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 상위태그에 넓이값을 주고 이미지를 100%로 맞추면 사이즈 변경 */
+/* 반응형을 고려해서 왼쪽오르쪽 gnb나 메뉴를 포지션으로주고 로고는 가운데로 고정 시킨다. */
+/* 로고가 가운데 있을경우에만 포지션 엡솔루트를 준다. */
+.logo {
+    width: 200px;
+    /* padding: 25px 0 30px; */
+}
+
+.logo img {
+    width: 100%;
+}
+
+.main-menu {
+    display: flex;
+}
+
+.main-menu>li {
+    text-align: center;
+    /* 서브메뉴 넓이의 기준점 */
+    position: relative;
+}
+.main-menu>li:hover{
+    background:var(--mainColor);
+}
+.main-menu>li:hover .depth1{
+    background-color: var(--mainColor);
+}
+
+.main-menu>li>a {
+    display: block;
+    width: 115px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100px;
+}
+
+/* depth1 서버메뉴 숨기기 */
+.depth1 {
+    display: none;
+    /* 메인메뉴 호버시에 서브메뉴 때문에 흔들거리는거 방지 */
+    position: absolute;
+    /* 서브메뉴 사이사이 간격조정 */
+    line-height: 2;
+    /* 서브메뉴와 메인메뉴 사이의 간격조정 */
+    padding: 20px 0 0px;
+    /* background: rgba(0, 255, 0, 0.1); */
+    /* 서브메뉴는 넓이값을 주고 부모영역에 relative로 기준점을 준다 */
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+}
+.main-menu:hover .depth1{
+    display: block;
+}
+
+.sns-list {
+    display: flex;
+    gap: 10px;
+}
+.sns-list>li>a:hover{
+    background: var(--mainColor);
+    border-color: var(--mainColor);
+}
+
+.sns-list>li {}
+
+.sns-list>li>a {
+    /* 이미지를 위아래, 좌우 가운데 보내기 */
+    display: flex;
+    /* 좌우 정렬 = dispaly: flex; text-align:center; */
+    justify-content: center;
+    /* 위아래 정렬 */
+    align-items: center;
+    width: 39px;
+    height: 39px;
+    border: 2px solid var(--mainTextColor);
+    border-radius: 50%;
+    background: #fff;
+}
+
+/* main */
+main {
+    height: 500px;
+}
+
+/* footer */
+footer {}
+
+.footer-top{
+    background: var(--mainColor);
+    padding: 20px 0;
+}
+.util-menu{
+    display: flex;
+    gap: 20px;
+}
+.util-menu>li>a{
+    font-weight: 600;
+}
+.util-menu>li>a:hover{
+    /* 호버시 아래에 라인효과 */
+    text-decoration: underline;
+}
+.footer-bottom{
+    background: var(--mainTextColor);
+    padding: 60px 0;
+    color: #aaa;
+}
+.footer-bottom>.inner{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-bottom>.inner>.footer-bottom-left>div{
+    display: flex;
+    /* 메가커피로고, snn-list L/R간격 */
+    gap: 20px;
+    align-items: center;
+}
+.footer-bottom-left>div>img{
+    width: 200px;
+}
+
+.footer-bottom-left>address{
+    margin-top: 20px;
+    /* address줄의 간격 */
+    line-height: 2;
+    font-size: 14px;
+}
+.footer-bottom-left>address strong{
+    /* font-size: 16px; */
+    color: #fff;
+}
+.sitemap{
+    display: flex;
+    gap: 30px;
+}
+.sitemap>li>a{
+    color: white;
+    font-weight: bolder;
+}
+.sitemap .depth1{
+    display: block;
+    /* 포지션을 안준 상태 */
+    /* 자기자리로 돌아간다, */
+    position: static;
+}
